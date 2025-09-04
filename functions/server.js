@@ -1,4 +1,4 @@
-const serverless = require('serverless-http');
+import serverless from 'serverless-http';
 
 import   'dotenv/config';
  import express from "express";    
@@ -29,4 +29,4 @@ const allowedOrigins = ['http://localhost:5173']
  app.listen(port, ()=> console.log(`Server start on PORT:${port}`)); // display the msg in terminal 
 
  
-module.exports.handler = serverless(app);
+export const handler = serverless(app);
