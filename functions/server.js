@@ -1,11 +1,13 @@
+const serverless = require('serverless-http');
+
 import   'dotenv/config';
  import express from "express";    
  import cors from "cors"; // to connect frontend and backend 
 
  import cookieParser from "cookie-parser";
- import connectDB from "./config/mongodb.js";
- import authRouter from "./routes/authRoutes.js";
-import userRouter from "./routes/userRoutes.js";
+ import connectDB from "../config/mongodb.js";
+ import authRouter from "../routes/authRoutes.js";
+import userRouter from "../routes/userRoutes.js";
 
  const app = express();
  const port = process.env.PORT  || 4000  ; // if port no is defined in  env variable then it will be using that otherwise 4000
@@ -26,4 +28,5 @@ const allowedOrigins = ['http://localhost:5173']
 
  app.listen(port, ()=> console.log(`Server start on PORT:${port}`)); // display the msg in terminal 
 
-//   connectDB();
+ 
+module.exports.handler = serverless(app);
