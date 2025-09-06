@@ -15,7 +15,7 @@ import userRouter from "../routes/userRoutes.js";
 
 connectDB();
  
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['https://authbackend-masteroogway111.netlify.app']
 
  app.use(express.json()); //all the request will be parsed using json 
  app.use(cookieParser());
