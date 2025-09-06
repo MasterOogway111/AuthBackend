@@ -26,7 +26,7 @@ const allowedOrigins = ['http://localhost:5173']
  app.use('/api/user',userRouter)
 
 
- app.listen(port, ()=> console.log(`Server start on PORT:${port}`)); // display the msg in terminal 
+//  app.listen(port, ()=> console.log(`Server start on PORT:${port}`)); // display the msg in terminal 
 
  
 export const handler = serverless(app);
